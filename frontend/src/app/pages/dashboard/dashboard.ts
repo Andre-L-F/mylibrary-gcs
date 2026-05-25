@@ -97,6 +97,9 @@ export class Dashboard implements OnInit {
     ).length;
 
   }
+
+  // Dados iniciais para facilitar testes
+  
 criarDadosIniciais(): void {
 
   const categoriasStorage =
