@@ -48,6 +48,7 @@ categorias: any[] = [];
   }
 
   // Simula carregamento de dados do backend
+  // Em um cenário real, isso seria feito via HTTP
 
 ngOnInit(): void {
 

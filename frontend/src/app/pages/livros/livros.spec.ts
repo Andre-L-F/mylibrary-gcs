@@ -16,6 +16,7 @@ export class LivroService {
     'http://localhost:8080/livros';
 
     // private api = 'https://api.example.com/livros';
+    // private api = 'https://jsonplaceholder.typicode.com/posts';
     
   listar() {
 
