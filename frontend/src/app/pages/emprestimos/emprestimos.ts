@@ -43,6 +43,8 @@ export class Emprestimos implements OnInit {
 
   }
 
+  // Simula carregamento de dados do backend
+  
   ngOnInit(): void {
 
     this.carregarLivros();
