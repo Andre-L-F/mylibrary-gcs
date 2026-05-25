@@ -1,0 +1,47 @@
+<div class="container">
+
+  <h1>
+    Livros Atrasados
+  </h1>
+
+  <div
+    *ngIf="emprestimosAtrasados.length === 0"
+    class="sem-atrasos"
+  >
+
+    Nenhum empréstimo atrasado.
+
+  </div>
+
+  <div
+    class="card-atraso"
+    *ngFor="let emprestimo of emprestimosAtrasados"
+  >
+
+    <h2>
+      {{ emprestimo.livro.titulo }}
+    </h2>
+
+    <p>
+      <strong>Usuário:</strong>
+      {{ emprestimo.usuario }}
+    </p>
+
+    <p>
+      <strong>Data devolução:</strong>
+      {{ emprestimo.dataDevolucao }}
+    </p>
+
+    <p class="dias-atraso">
+
+      <strong>Dias de atraso:</strong>
+
+      {{ calcularDiasAtraso(
+        emprestimo.dataDevolucao
+      ) }}
+
+    </p>
+
+  </div>
+
+</div>

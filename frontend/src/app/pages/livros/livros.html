@@ -1,0 +1,84 @@
+<h1>
+  Livros
+</h1>
+
+<form [formGroup]="form">
+
+  <input
+    type="text"
+    formControlName="titulo"
+    placeholder="Titulo"
+  >
+
+  <input
+    type="text"
+    formControlName="autor"
+    placeholder="Autor"
+  >
+
+  <input
+    type="text"
+    formControlName="isbn"
+    placeholder="ISBN"
+  >
+
+  <input
+    type="number"
+    formControlName="ano"
+    placeholder="Ano"
+  >
+
+  <select formControlName="categoriaId">
+
+    <option value="0">
+      Selecione
+    </option>
+
+    <option
+      *ngFor="let categoria of categorias"
+      [value]="categoria.id"
+    >
+      {{ categoria.nome }}
+    </option>
+
+  </select>
+
+  <button
+    type="button"
+    (click)="salvar()"
+  >
+    Salvar
+  </button>
+
+</form>
+
+<hr>
+
+<div *ngFor="let livro of livros">
+
+  <h3>
+    {{ livro.titulo }}
+  </h3>
+
+  <p>
+    Autor:
+    {{ livro.autor }}
+  </p>
+
+  <p>
+    Status:
+    {{ livro.status }}
+  </p>
+
+  <p>
+    Categoria:
+    {{ livro.categoria?.nome }}
+  </p>
+
+  <button
+    (click)="deletar(livro.id)"
+  >
+    Excluir
+  </button>
+
+</div>

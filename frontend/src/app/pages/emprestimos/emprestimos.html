@@ -1,0 +1,132 @@
+<div class="container">
+
+  <h1>
+    Empréstimos
+  </h1>
+
+  <form
+    [formGroup]="form"
+    class="formulario"
+  >
+
+    <div class="campo">
+
+      <label>
+        Livro
+      </label>
+
+      <select formControlName="livroId">
+
+        <option value="0">
+          Selecione um livro
+        </option>
+
+        <option
+          *ngFor="let livro of livros"
+          [value]="livro.id"
+        >
+          {{ livro.titulo }}
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="campo">
+
+      <label>
+        Usuário
+      </label>
+
+      <input
+        type="text"
+        formControlName="usuario"
+        placeholder="Digite o nome"
+      >
+
+    </div>
+
+    <div class="campo">
+
+      <label>
+        Data do empréstimo
+      </label>
+
+      <input
+        type="date"
+        formControlName="dataEmprestimo"
+      >
+
+    </div>
+
+    <div class="campo">
+
+      <label>
+        Data de devolução
+      </label>
+
+      <input
+        type="date"
+        formControlName="dataDevolucao"
+      >
+
+    </div>
+
+    <button
+      type="button"
+      class="botao-salvar"
+      (click)="salvar()"
+    >
+      Salvar
+    </button>
+
+  </form>
+
+  <hr>
+
+  <div
+    class="emprestimo-card"
+    *ngFor="let emprestimo of emprestimos"
+  >
+
+    <h3>
+      {{ emprestimo.livro.titulo }}
+    </h3>
+
+    <p>
+      <strong>Usuário:</strong>
+      {{ emprestimo.usuario }}
+    </p>
+
+    <p>
+      <strong>Data empréstimo:</strong>
+      {{ emprestimo.dataEmprestimo }}
+    </p>
+
+    <p>
+      <strong>Data devolução:</strong>
+      {{ emprestimo.dataDevolucao }}
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+      {{ emprestimo.status }}
+    </p>
+
+    <button
+      class="botao-devolver"
+      (click)="devolver(emprestimo.id)"
+    >
+      Devolver
+    </button>
+
+    <button
+      class="botao-excluir"
+      (click)="deletar(emprestimo.id)"
+    >
+      Excluir
+    </button>
+
+  </div>
+
+</div>

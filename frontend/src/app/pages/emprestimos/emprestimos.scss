@@ -1,0 +1,28 @@
+form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 300px;
+
+  margin-bottom: 20px;
+}
+
+input,
+select,
+button {
+
+  padding: 10px;
+}
+
+div {
+
+  border: 1px solid #ccc;
+
+  padding: 10px;
+
+  margin-bottom: 10px;
+}
