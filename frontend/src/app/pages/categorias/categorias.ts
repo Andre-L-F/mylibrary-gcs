@@ -43,6 +43,8 @@ export class Categorias implements OnInit {
 
   }
 
+  // Simula carregamento de dados do backend
+  
   carregarCategorias(): void {
 
     const dados = localStorage.getItem('categorias');
